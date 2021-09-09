@@ -25,6 +25,10 @@ dependencies:
   flutter:
     sdk: flutter
   sk_onboarding_screen: ^1.0.1
+  rounded_floating_app_bar: ^0.1.0
+  flutter_image_slideshow: ^0.1.1
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
