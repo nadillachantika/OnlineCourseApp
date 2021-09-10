@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import 'detailmycourse.dart';
 
@@ -41,317 +42,255 @@ class _MyClassState extends State<MyClass> {
           ),
           centerTitle: true,
         ),
-        body: TabBarView(children: [
-          //page upcoming
-          new ListView(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            children: [
-              Wrap(
-                children: [
-                  Container(
-                    // height: double.infinity,
-
-                    width: double.infinity,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 116,
-                              width: 176,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        'assets/image/jessica2.png')),
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: TabBarView(children: [
+            //page upcoming
+            new ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              children: [
+                Wrap(
+                  children: [
+                    Container(
+                      // height: double.infinity,
+                      width: double.infinity,
+                      padding: EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 116,
+                                width: 176,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8),
+                                  image: DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage(
+                                          'assets/image/jessica2.png')),
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 200,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'UI Design Basic',
-                                    style: TextStyle(
-                                        fontSize: 14, color: Colors.black),
-                                  ),
-                                  Text(
-                                    'about the visual aspects displayed on websites and mobile applications ',
-                                    maxLines: 3,
-                                    style: TextStyle(color: Color(0xff888888)),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Icon(
-                                              Icons.person,
-                                              color: Color(0xff0096c7),
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Text(
-                                              'Jessica',
-                                              style: TextStyle(
-                                                  color: Color(0xff0096C7)),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 25,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(4)),
-                                          child: Text(
-                                            'Continue',
-                                            style: TextStyle(fontSize: 10),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 200,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'UI Design Basic',
+                                      style: TextStyle(
+                                          fontSize: 14, color: Colors.black),
+                                    ),
+                                    Text(
+                                      'about the visual aspects displayed on websites and mobile applications ',
+                                      maxLines: 3,
+                                      style: TextStyle(color: Color(0xff888888)),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.person,
+                                                color: Colors.grey,
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                'Jessica',
+                                                style: TextStyle(
+                                                    color: Color(0xff0096C7)),
+                                              ),
+                                            ],
                                           ),
-                                          color: Color(0xFF047397),
-                                          textColor: Colors.white,
-                                          onPressed: () {
-                                            //     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                                          },
                                         ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-
-              Wrap(
-                children: [
-                  Container(
-                    // height: double.infinity,
-
-                    width: double.infinity,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 116,
-                              width: 176,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        'assets/image/jessica2.png')),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 200,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'UI Design Basic',
-                                    style: TextStyle(
-                                        fontSize: 14, color: Colors.black),
-                                  ),
-                                  Text(
-                                    'about the visual aspects displayed on websites and mobile applications ',
-                                    maxLines: 3,
-                                    style: TextStyle(color: Color(0xff888888)),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Icon(
-                                              Icons.person,
-                                              color: Color(0xff0096c7),
+                                        Container(
+                                          height: 25,
+                                          child: RaisedButton(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(4)),
+                                            child: Text(
+                                              'Continue',
+                                              style: TextStyle(fontSize: 10),
                                             ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Text(
-                                              'Jessica',
-                                              style: TextStyle(
-                                                  color: Color(0xff0096C7)),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 25,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.circular(4)),
-                                          child: Text(
-                                            'Continue',
-                                            style: TextStyle(fontSize: 10),
+                                            color: Color(0xff0096c7),
+                                            textColor: Colors.white,
+                                            onPressed: () {
+                                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailMyCourse()));
+                                            },
                                           ),
-                                          color: Color(0xFF047397),
-                                          textColor: Colors.white,
-                                          onPressed: () {
-                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailMyCourse()));
-                                          },
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          new ListView(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            children: [
-              Wrap(
-                children: [
-                  Container(
-                    // height: double.infinity,
+                                        )
+                                      ],
+                                    ),
 
-                    width: double.infinity,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 116,
-                              width: 176,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        'assets/image/jessica2.png')),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: 200,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'UI Design Basic',
-                                    style: TextStyle(
-                                        fontSize: 14, color: Colors.black),
-                                  ),
-                                  Text(
-                                    'about the visual aspects displayed on websites and mobile applications ',
-                                    maxLines: 3,
-                                    style: TextStyle(color: Color(0xff888888)),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Icon(
-                                              Icons.person,
-                                              color: Color(0xff0096c7),
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Text(
-                                              'Jessica',
-                                              style: TextStyle(
-                                                  color: Color(0xff0096C7)),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 25,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.circular(4)),
-                                          child: Text(
-                                            'Review',
-                                            style: TextStyle(fontSize: 10),
+                            ],
+                          ),
+                          SizedBox(height: 20,),
+                          LinearPercentIndicator(
+                            // width: 209,
+                            lineHeight: 5.0,
+                            percent: () {
+                              double percent = 0.5;
+                              return percent;
+                            }(),
+                            backgroundColor:
+                            Color(0xff0096c7).withOpacity(0.3),
+                            progressColor: Color(0xff0096c7),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  '7 Lessons', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff888888)),
+                                ),
+                              ), Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  '24 Lessons', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff888888)),
+                                ),
+                              )
+
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20,),
+
+              ],
+            ),
+
+
+            //Tab Complete
+            new ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              children: [
+                Wrap(
+                  children: [
+                    Container(
+                      // height: double.infinity,
+
+                      width: double.infinity,
+                      padding: EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 116,
+                                width: 176,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8),
+                                  image: DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage(
+                                          'assets/image/jessica2.png')),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: 200,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'UI Design Basic',
+                                      style: TextStyle(
+                                          fontSize: 14, color: Colors.black),
+                                    ),
+                                    Text(
+                                      'about the visual aspects displayed on websites and mobile applications ',
+                                      maxLines: 3,
+                                      style: TextStyle(color: Color(0xff888888)),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.person,
+                                                color: Color(0xff0096c7),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                'Jessica',
+                                                style: TextStyle(
+                                                    color: Color(0xff0096C7)),
+                                              ),
+                                            ],
                                           ),
-                                          color: Color(0xFF047397),
-                                          textColor: Colors.white,
-                                          onPressed: () {
-                                            //     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                                          },
                                         ),
-                                      )
-                                    ],
-                                  )
-                                ],
+                                        Container(
+                                          height: 25,
+                                          child: RaisedButton(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.circular(4)),
+                                            child: Text(
+                                              'Review',
+                                              style: TextStyle(fontSize: 10),
+                                            ),
+                                            color: Color(0xff0096c7),
+                                            textColor: Colors.white,
+                                            onPressed: () {
+                                              //     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                                            },
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
 
-            ],
-          ),
-        ]),
+              ],
+            ),
+          ]),
+        ),
       ),
     ));
   }
