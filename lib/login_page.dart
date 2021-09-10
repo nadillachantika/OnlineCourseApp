@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Color(0xFF047397),
                   textColor: Colors.white,
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpPage()));
                   },
                 ),
               ),

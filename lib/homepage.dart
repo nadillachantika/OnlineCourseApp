@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:online_courseapp/class/detailcourse_page.dart';
+import 'package:online_courseapp/profile_page.dart';
+
+import 'class/listcourse_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +22,8 @@ class _HomePageState extends State<HomePage> {
           child: Padding(
         padding: EdgeInsets.all(20),
         child: SingleChildScrollView(
-          child: Column(children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(
               children: [
                 new Flexible(
@@ -41,13 +46,19 @@ class _HomePageState extends State<HomePage> {
                 ),
                 new Flexible(
                   flex: 1,
-                  child: Container(
-                    // width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                            image: AssetImage('assets/image/imgprofil.png'))),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
+
+                    },
+                    child: Container(
+                      // width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                              image: AssetImage('assets/image/imgprofil.png'))),
+                    ),
                   ),
                 )
               ],
@@ -83,104 +94,132 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 15,
             ),
-            Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Rekomendasi Course',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
-                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:[
+                  Text(
+                    'Rekomendasi Course',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ListCoursePage()));
+
+                    },
+                    child: Text(
+                      'See All',
+                      style: TextStyle(
+                          color: Color(0xff0096c7),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+
+
+                ] ),
             SizedBox(
               height: 15,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 new Flexible(
                   flex: 1,
-                  child: Container(
-                    // height: 237,
-                    // width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4),
-                        border:
-                            Border.all(color: Colors.black.withOpacity(0.05))),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            height: 125,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(4),
-                                  topLeft: Radius.circular(4)),
-                              image: new DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                    'assets/image/courseflutter.png',
-                                  )),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailCourse()));
+
+                    },
+                    child: Container(
+                      // height: 237,
+                      // width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(4),
+                          border:
+                              Border.all(color: Colors.black.withOpacity(0.05))),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              height: 125,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(4),
+                                    topLeft: Radius.circular(4)),
+                                image: new DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                      'assets/image/courseflutter.png',
+                                    )),
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Flutter Basic',
-                                style: TextStyle(fontSize: 14),
-                              ),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'Rizky Syaputra',
-                                  style: TextStyle(fontSize: 12),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Flutter Basic',
+                                  style: TextStyle(fontSize: 14),
                                 ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/icon/star.png',
-                                        height: 13,
-                                      ),
-                                      Text(
-                                        '5.5',
-                                        textScaleFactor: 1.5,
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                            fontSize: 8,
-                                            color: Color(0xffba9b6c)),
-                                      ),
-                                      Text(
-                                        '(105)',
-                                        textScaleFactor: 1.5,
-                                        style: TextStyle(
-                                            fontSize: 8,
-                                            color: Colors.black.withOpacity(0.5)),
-                                      )
-                                    ],
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Rizky Syaputra',
+                                    style: TextStyle(fontSize: 12),
                                   ),
-                                  Text(
-                                    'Rp 1000.000,-',
-                                    style: TextStyle(
-                                        color: Colors.blueAccent,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset(
+                                          'assets/icon/star.png',
+                                          height: 13,
+                                        ),
+                                        Text(
+                                          '5.5',
+                                          textScaleFactor: 1.5,
+                                          textAlign: TextAlign.start,
+                                          style: TextStyle(
+                                              fontSize: 8,
+                                              color: Color(0xffba9b6c)),
+                                        ),
+                                        Text(
+                                          '(105)',
+                                          textScaleFactor: 1.5,
+                                          style: TextStyle(
+                                              fontSize: 8,
+                                              color:
+                                                  Colors.black.withOpacity(0.5)),
+                                        )
+                                      ],
+                                    ),
+                                    Text(
+                                      'Rp 1000.000,-',
+                                      style: TextStyle(
+                                          color: Colors.blueAccent,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -189,88 +228,98 @@ class _HomePageState extends State<HomePage> {
                 ),
                 new Flexible(
                   flex: 1,
-                  child: Container(
-                    // height: 237,
-                    // width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4),
-                        border:
-                            Border.all(color: Colors.black.withOpacity(0.05))),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            height: 125,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(4),
-                                  topLeft: Radius.circular(4)),
-                              image: new DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                    'assets/image/courseweb.png',
-                                  )),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailCourse()));
+                    },
+                    child: Container(
+                      // height: 237,
+                      // width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(4),
+                          border:
+                              Border.all(color: Colors.black.withOpacity(0.05))),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              height: 125,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(4),
+                                    topLeft: Radius.circular(4)),
+                                image: new DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                      'assets/image/courseweb.png',
+                                    )),
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Web Intermeiate',
-                                style: TextStyle(fontSize: 14),
-                              ),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'Imroatun Nurul Jannah',
-                                  style: TextStyle(fontSize: 12),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Web Intermeiate',
+                                  style: TextStyle(fontSize: 14),
                                 ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/icon/star.png',
-                                        height: 13,
-                                      ),
-                                      Text(
-                                        '5.5',
-                                        textScaleFactor: 1.5,
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                            fontSize: 8,
-                                            color: Color(0xffba9b6c)),
-                                      ),
-                                      Text(
-                                        '(105)',
-                                        textScaleFactor: 1.5,
-                                        style: TextStyle(
-                                            fontSize: 8,
-                                            color: Colors.black.withOpacity(0.5)),
-                                      )
-                                    ],
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Imroatun Nurul Jannah',
+                                    style: TextStyle(fontSize: 12),
                                   ),
-                                  Text(
-                                    'Rp 1000.000,-',
-                                    style: TextStyle(
-                                        color: Colors.blueAccent,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset(
+                                          'assets/icon/star.png',
+                                          height: 13,
+                                        ),
+                                        Text(
+                                          '5.5',
+                                          textScaleFactor: 1.5,
+                                          textAlign: TextAlign.start,
+                                          style: TextStyle(
+                                              fontSize: 8,
+                                              color: Color(0xffba9b6c)),
+                                        ),
+                                        Text(
+                                          '(105)',
+                                          textScaleFactor: 1.5,
+                                          style: TextStyle(
+                                              fontSize: 8,
+                                              color:
+                                                  Colors.black.withOpacity(0.5)),
+                                        )
+                                      ],
+                                    ),
+                                    Text(
+                                      'Rp 1000.000,-',
+                                      style: TextStyle(
+                                          color: Colors.blueAccent,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -279,43 +328,61 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 20,
             ),
-            Text(
-              'Feedback',
-              style: TextStyle(color: Colors.black, fontSize: 14),
-            ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:[
+                      Text(
+                        'Article',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),Text(
+                        'See All',
+                        style: TextStyle(
+                            color: Color(0xff0096c7),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+
+
+                    ] ),
             SizedBox(
               height: 5,
             ),
             Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(4)
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.white
+              ),
+              child: ListTile(
+                leading: Image.asset(
+                  'assets/image/courseweb.png',
+                  height: 70,
+                  fit: BoxFit.contain,
                 ),
-                child: Row(children: [
-                  Column(children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          image: DecorationImage(
-                              image: AssetImage('assets/image/imgprofil.png'))),
-                    ),
-                    SizedBox(height: 10,),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                        child: Text('Adzkia Cyra', style: TextStyle(color: Colors.blueAccent, fontSize: 14, fontWeight: FontWeight.w500),),
+                title: Text(
+                  'Figma Tutorial for Complete\nBeginners',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
+                ),
+                subtitle: Text(
+                  'UI Design',
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF828282)),
+                ),
+                trailing: Image.asset(
+                  'assets/icon/iclove.png',
+                  height: 15,
+                  fit: BoxFit.contain,
+                ),
+              ),
 
-                    ), Align(
-                      alignment: Alignment.centerLeft,
-                        child: Text('Web Basic', style: TextStyle(color: Colors.black, fontSize: 10, fontWeight: FontWeight.w400),),
-
-                    ),
-
-
-                  ])
-                ]))
+            )
           ]),
         ),
       )),

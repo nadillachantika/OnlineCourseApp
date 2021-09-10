@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_courseapp/bottomnav.dart';
 import 'package:online_courseapp/homepage.dart';
 
 import 'login_page.dart';
@@ -125,7 +126,7 @@ class _OtpPageState extends State<OtpPage> {
                     color: Color(0xFF047397),
                     textColor: Colors.white,
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
                     },
                   ),
                 ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../login_page.dart';
+
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
 
@@ -19,11 +21,16 @@ class SecondPage extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: Align(
                 alignment: Alignment.topRight,
-                child: Text(
-                  'Lewati',
-                  style: TextStyle(color: Colors.white,
-                      fontSize: 16, fontWeight:FontWeight.w400),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                  },
+                  child: Text(
+                    'Lewati',
+                    style: TextStyle(color: Colors.white,
+                        fontSize: 16, fontWeight:FontWeight.w400),
 
+                  ),
                 ),
               ),
             ),

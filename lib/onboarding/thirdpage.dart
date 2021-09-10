@@ -15,20 +15,8 @@ class ThirdPage extends StatelessWidget {
             )
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Text(
-                  'Lewati',
-                  style: TextStyle(color: Colors.white,
-                      fontSize: 16, fontWeight:FontWeight.w400),
-
-                ),
-              ),
-            ),
-            SizedBox(height: 350,),
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(
@@ -40,21 +28,25 @@ class ThirdPage extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            SizedBox(height: 60),
-            Container(
-              height: 42,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
+            SizedBox(height: 50),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                
+                height: 42,
 
-              ),
-              margin: EdgeInsets.all(20),
-              child: FlatButton(
-                child: Text('Get Start!'),
-                color: Color(0xFF0096C7),
-                textColor: Colors.white,
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-                },
+                margin: EdgeInsets.all(20),
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4)
+                  ),
+                  child: Text('Get Start!'),
+                  color: Color(0xFF0096C7),
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                  },
+                ),
               ),
             ),
 

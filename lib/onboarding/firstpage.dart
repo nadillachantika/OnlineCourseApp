@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../login_page.dart';
+
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
 
@@ -16,11 +18,17 @@ class FirstPage extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: Align(
                 alignment: Alignment.topRight,
-                child: Text(
-                  'Lewati',
-                  style: TextStyle(fontFamily:'Poppins',color: Colors.white,
-                  fontSize: 16, fontWeight:FontWeight.w400),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
 
+                  },
+                  child: Text(
+                    'Lewati',
+                    style: TextStyle(fontFamily:'Poppins',color: Colors.white,
+                    fontSize: 16, fontWeight:FontWeight.w400),
+
+                  ),
                 ),
               ),
       ),
