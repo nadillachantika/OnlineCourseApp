@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:online_courseapp/bottomnav_item/profile_page.dart';
 import 'package:online_courseapp/class/detailcourse_page.dart';
-import 'package:online_courseapp/profile_page.dart';
+import 'package:online_courseapp/class/listcourse_page.dart';
+import 'package:online_courseapp/detail_article.dart';
 
-import 'class/listcourse_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -47,9 +48,11 @@ class _HomePageState extends State<HomePage> {
                 new Flexible(
                   flex: 1,
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
-
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
                     },
                     child: Container(
                       // width: 50,
@@ -94,31 +97,30 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:[
-                  Text(
-                    'Rekomendasi Course',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ListCoursePage()));
-
-                    },
-                    child: Text(
-                      'See All',
-                      style: TextStyle(
-                          color: Color(0xff0096c7),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-
-
-                ] ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                'Rekomendasi Course',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ListCoursePage()));
+                },
+                child: Text(
+                  'See All',
+                  style: TextStyle(
+                      color: Color(0xff0096c7),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+            ]),
             SizedBox(
               height: 15,
             ),
@@ -128,9 +130,11 @@ class _HomePageState extends State<HomePage> {
                 new Flexible(
                   flex: 1,
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailCourse()));
-
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailCourse()));
                     },
                     child: Container(
                       // height: 237,
@@ -138,8 +142,8 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(4),
-                          border:
-                              Border.all(color: Colors.black.withOpacity(0.05))),
+                          border: Border.all(
+                              color: Colors.black.withOpacity(0.05))),
                       child: Column(
                         children: [
                           Padding(
@@ -182,7 +186,8 @@ class _HomePageState extends State<HomePage> {
                                     Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Image.asset(
                                           'assets/icon/star.png',
@@ -201,8 +206,8 @@ class _HomePageState extends State<HomePage> {
                                           textScaleFactor: 1.5,
                                           style: TextStyle(
                                               fontSize: 8,
-                                              color:
-                                                  Colors.black.withOpacity(0.5)),
+                                              color: Colors.black
+                                                  .withOpacity(0.5)),
                                         )
                                       ],
                                     ),
@@ -229,8 +234,11 @@ class _HomePageState extends State<HomePage> {
                 new Flexible(
                   flex: 1,
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailCourse()));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailCourse()));
                     },
                     child: Container(
                       // height: 237,
@@ -238,8 +246,8 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(4),
-                          border:
-                              Border.all(color: Colors.black.withOpacity(0.05))),
+                          border: Border.all(
+                              color: Colors.black.withOpacity(0.05))),
                       child: Column(
                         children: [
                           Padding(
@@ -282,7 +290,8 @@ class _HomePageState extends State<HomePage> {
                                     Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Image.asset(
                                           'assets/icon/star.png',
@@ -301,8 +310,8 @@ class _HomePageState extends State<HomePage> {
                                           textScaleFactor: 1.5,
                                           style: TextStyle(
                                               fontSize: 8,
-                                              color:
-                                                  Colors.black.withOpacity(0.5)),
+                                              color: Colors.black
+                                                  .withOpacity(0.5)),
                                         )
                                       ],
                                     ),
@@ -328,60 +337,61 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 20,
             ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:[
-                      Text(
-                        'Article',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500),
-                      ),Text(
-                        'See All',
-                        style: TextStyle(
-                            color: Color(0xff0096c7),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500),
-                      ),
-
-
-                    ] ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                'Article',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
+              ),
+              Text(
+                'See All',
+                style: TextStyle(
+                    color: Color(0xff0096c7),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
+              ),
+            ]),
             SizedBox(
               height: 5,
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailArticle()));
+              },
+              child: Card(
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8), color: Colors.white),
+                  child: ListTile(
+                    leading: Image.asset(
+                      'assets/image/courseweb.png',
+                      height: 70,
+                      fit: BoxFit.contain,
+                    ),
+                    title: Text(
+                      'Figma Tutorial for Complete\nBeginners',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    subtitle: Text(
+                      'UI Design',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF828282)),
+                    ),
+                    trailing: Image.asset(
+                      'assets/icon/iclove.png',
+                      height: 15,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
               ),
-              child: ListTile(
-                leading: Image.asset(
-                  'assets/image/courseweb.png',
-                  height: 70,
-                  fit: BoxFit.contain,
-                ),
-                title: Text(
-                  'Figma Tutorial for Complete\nBeginners',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
-                ),
-                subtitle: Text(
-                  'UI Design',
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF828282)),
-                ),
-                trailing: Image.asset(
-                  'assets/icon/iclove.png',
-                  height: 15,
-                  fit: BoxFit.contain,
-                ),
-              ),
-
             )
           ]),
         ),

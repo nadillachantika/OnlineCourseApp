@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:online_courseapp/class/myclass_page.dart';
-import 'package:online_courseapp/notification_page.dart';
-import 'package:online_courseapp/profile_page.dart';
+import 'package:online_courseapp/bottomnav_item/notification_page.dart';
+import 'package:online_courseapp/bottomnav_item/wishlist_page.dart';
 
+import 'bottomnav_item/homepage.dart';
+import 'bottomnav_item/profile_page.dart';
 import 'class/listcourse_page.dart';
-import 'homepage.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _BottomNavState extends State<BottomNav> {
     });
   }
 
-  final _widgetOptions = [HomePage(),ListCoursePage(), MyClass(),NotificationPage(), ProfilePage()];
+  final _widgetOptions = [HomePage(),WishListPage(), MyClass(),NotificationPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {

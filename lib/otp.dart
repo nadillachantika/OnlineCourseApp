@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:online_courseapp/bottomnav.dart';
-import 'package:online_courseapp/homepage.dart';
 
 import 'login_page.dart';
 
@@ -100,7 +99,7 @@ class _OtpPageState extends State<OtpPage> {
                   height: 45,
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30,40,30,70),
+                  padding: const EdgeInsets.fromLTRB(30, 40, 30, 70),
                   child: Column(
                     children: [
                       Row(
@@ -120,13 +119,13 @@ class _OtpPageState extends State<OtpPage> {
                   height: 42,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)
-                    ),
+                        borderRadius: BorderRadius.circular(8)),
                     child: Text('Submit'),
                     color: Color(0xFF047397),
                     textColor: Colors.white,
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => BottomNav()));
                     },
                   ),
                 ),
@@ -142,12 +141,11 @@ class _OtpPageState extends State<OtpPage> {
     return Container(
       decoration: BoxDecoration(
           color: Color(0xFFF8F8F8),
-          border: Border.all(width: 1, color: Color(0xFF0096C7),),
-          borderRadius: BorderRadius.circular(8)
-
-
-
+          border: Border.all(
+            width: 1,
+            color: Color(0xFF0096C7),
           ),
+          borderRadius: BorderRadius.circular(8)),
       height: 50,
       child: AspectRatio(
         aspectRatio: 1.0,
@@ -175,6 +173,5 @@ class _OtpPageState extends State<OtpPage> {
         ),
       ),
     );
-
   }
 }

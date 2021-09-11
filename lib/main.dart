@@ -8,7 +8,6 @@ import 'package:online_courseapp/login_page.dart';
 import 'package:online_courseapp/class/myclass_page.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:online_courseapp/checkout/payment_method.dart';
-import 'package:online_courseapp/profile_page.dart';
 import 'package:online_courseapp/splashscreen.dart';
 
 import 'onboarding/firstpage.dart';

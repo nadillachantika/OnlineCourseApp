@@ -11,71 +11,29 @@ class FirstPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/image/ob1.png'), fit: BoxFit.none)),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-
-                  },
+                image: AssetImage('assets/image/ob1.png'), fit: BoxFit.fill)),
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+                SizedBox(height: 320,),
+                Align(
+                  alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Lewati',
-                    style: TextStyle(fontFamily:'Poppins',color: Colors.white,
-                    fontSize: 16, fontWeight:FontWeight.w400),
-
+                    'Belajar berbagai skill pemrograman hanya\ndengan satu aplikasi',
+                    maxLines: 3,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.w400),
                   ),
                 ),
-              ),
-      ),
-              SizedBox(height: 350,),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Text(
-                  'Belajar berbagai skill pemrograman hanya\ndengan satu aplikasi',
-                  maxLines: 3,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white,
-                  fontSize: 26,
-                  fontWeight: FontWeight.w400),
-                ),
-              ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  'Selanjutnya',
-                  style: TextStyle(color: Colors.white,
-                      fontSize: 16, fontWeight:FontWeight.w400),
-
-                ),
-              ),
-            ),
 
 
-        ],
+          ],
+          ),
         ),
-        //     Text(
-        //       'Belajar berbagai skill pemrograman hanya dengan satu aplikasi',
-        //       maxLines: 3,
-        //       textAlign: TextAlign.center,
-        //       style: TextStyle(color: Colors.white),
-        //     ),
-        //     Align(
-        //       alignment: Alignment.bottomRight,
-        //       child: Text(
-        //         'Selanjutnya',
-        //         style: TextStyle(color: Colors.white),
-        //       ),
-        //     ),
-        //
-        //   ],
-        // ),
       ),
     );
   }

@@ -10,10 +10,7 @@ class ThirdPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/image/ob3.png'),fit: BoxFit.cover
-
-            )
-        ),
+                image: AssetImage('assets/image/ob3.png'), fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -23,7 +20,8 @@ class ThirdPage extends StatelessWidget {
                 'Lets Join With Us!',
                 maxLines: 3,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white,
+                style: TextStyle(
+                    color: Colors.white,
                     fontSize: 26,
                     fontWeight: FontWeight.w400),
               ),
@@ -32,30 +30,24 @@ class ThirdPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(20),
               child: Container(
-                
                 height: 42,
-
                 margin: EdgeInsets.all(20),
                 child: FlatButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4)
-                  ),
+                      borderRadius: BorderRadius.circular(4)),
                   child: Text('Get Start!'),
                   color: Color(0xFF0096C7),
                   textColor: Colors.white,
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                 ),
               ),
             ),
-
-
           ],
         ),
       ),
-
-
     );
   }
 }

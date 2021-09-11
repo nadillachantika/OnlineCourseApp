@@ -16,27 +16,11 @@ class SecondPage extends StatelessWidget {
             )
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-                  },
-                  child: Text(
-                    'Lewati',
-                    style: TextStyle(color: Colors.white,
-                        fontSize: 16, fontWeight:FontWeight.w400),
-
-                  ),
-                ),
-              ),
-            ),
             SizedBox(height: 340,),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(bottom: 35.0),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Text(
@@ -46,18 +30,6 @@ class SecondPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white,
                       fontSize: 26,
                       fontWeight: FontWeight.w400),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  'Selanjutnya',
-                  style: TextStyle(color: Colors.white,
-                      fontSize: 16, fontWeight:FontWeight.w400),
-
                 ),
               ),
             ),

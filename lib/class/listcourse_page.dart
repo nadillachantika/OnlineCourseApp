@@ -246,10 +246,8 @@ class _ListCoursePageState extends State<ListCoursePage> {
                   children: listKursus,
                   shrinkWrap: true,
 
-
-
                   // mainAxisSpacing: 10,
-                  childAspectRatio: 19/22,
+                  childAspectRatio: 19 / 22,
                 )
               ],
             ),
