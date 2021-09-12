@@ -44,7 +44,8 @@ class _MyClassState extends State<MyClass> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: TabBarView(children: [
+          child: TabBarView(
+              children: [
             //page upcoming
             new ListView(
               scrollDirection: Axis.vertical,

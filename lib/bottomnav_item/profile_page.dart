@@ -114,6 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: [
                         //icon course enroll
                         Container(
+                          color: Colors.amber,
                           height: 50,
                           child: Row(
                             children: [

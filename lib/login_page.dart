@@ -38,25 +38,25 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 37,
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 15,
+                  Container(
+                    width: double.infinity,
+                    height: 40,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black.withOpacity(0.1)),
+                    ),
+                    child: TextField(
+                      style: TextStyle(fontSize: 14, color: Colors.white),
+                      decoration: InputDecoration(
+                          hintText: 'Email atau Username',
+                          hintStyle:
+                              TextStyle(fontSize: 12, color: Color(0xFF0096C7)),
+                          border: InputBorder.none),
+                    ),
                   ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.black.withOpacity(0.1)),
-                  ),
-                  child: TextField(
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                    decoration: InputDecoration(
-                        hintText: 'Email atau Username',
-                        hintStyle:
-                            TextStyle(fontSize: 12, color: Color(0xFF0096C7)),
-                        border: InputBorder.none),
-                  ),
-                ),
                 SizedBox(
                   height: 20,
                 ),
